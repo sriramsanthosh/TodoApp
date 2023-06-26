@@ -1,19 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%=title%></title>
-</head>
-<body>
-    <h1>Sign Up Page | TodoApp</h1>
+<%- include("./partials/header"); -%> 
 
-    <form action="/user/sign-up-session" method="post">
-        <input type="text" placeholder="Email *" id="email" name="email" required>
-        <input type="password" placeholder="Password *" name="password" id="password" required>
-        <input type="password" placeholder="Confirm Password *" name="confirm_password" id="confirm_password" required>
-        <button type="submit">Sign Up Now</button>
+<main>
+    <h1 class="text-center">Sign Up | TodoApp</h1>
+    <div class="input-container">
+        <form action="/user/sign-up-session" method="post" class="input-form">
+            <input class="input-box" type="text" placeholder="Email *" id="email" name="email" required><br>
+            <input class="input-box" type="password" placeholder="Password *" name="password" id="password" required><br>
+            <input class="input-box" type="password" placeholder="Confirm Password *" name="confirm_password" id="confirm_password" required><br>
+            <div class="button-container">
+                <button type="submit" class="text-center paynow">Sign Up Now</button>
+            </div>
+        </form>
+    </div>
+</main>
 
-    </form>
-</body>
-</html>
+<%- include("./partials/footer"); -%> 

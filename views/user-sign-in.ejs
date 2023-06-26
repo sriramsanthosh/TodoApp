@@ -1,16 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%=title%></title>
+    <title>TodoApp</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almendra&family=Audiowide&family=Quantico&family=Tilt+Prism&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/0d3ce04075.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/home.css">
 </head>
+
 <body>
-    <h1>Sign In Page | TodoApp</h1>
-    <form action="/user/sign-in-session" method="post">
-        <input type="email" name="email" id="email" placeholder="Email *">
-        <input type="password" name="password" id="password" placeholder="Password *">
-        <button type="submit">Login Now</button>
-    </form>
+    <main>
+        <div class="bg-container">
+            <div class="bg-image">
+
+            </div>
+            <div class="bg-text">
+                <h1 class="text-center">TodoApp</h1>
+                <h4 class="text-center">Log in</h4>
+                <div class="input-container">
+                    <form action="/user/sign-in-session" method="post" class="input-form">
+                        <input class="input-box" type="text" placeholder="Email *" id="email" name="email" required><br>
+                        <input class="input-box" type="password" placeholder="Password *" name="password" id="password" required><br>
+                        <div class="button-container">
+                            <button type="submit" class="text-center paynow">Log in</button>
+                        </div>
+                    </form>
+                </div>
+                <h5 class="text-center">Don't you have an account? <a href="/">Sign&nbsp;Up</a></h5>
+                <div class="footer-container text-center">
+                    <div class="text-center">&copy;&nbsp;TodoApp</div>    
+                    <div>Made&nbsp;with&nbsp;💖&nbsp;by <a href="https://www.linkedin.com/in/sriramsanthosh/" target="_blank" class="author">Sriram&nbsp;Santhosh</a></div>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
-</html>

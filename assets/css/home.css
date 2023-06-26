@@ -1,0 +1,150 @@
+body{
+    font-size: 20px;
+    font-family: 'Audiowide', cursive;   
+    width: 100%;
+    color: black;
+    /* background-color: rgb(68, 68, 68); */
+    /* overflow-y: hidden; */
+    overflow-x: hidden;
+}
+
+.bg-container{
+    min-height: 100vh;
+    height: auto;
+    width: 100%;
+    display: inline-flex;
+    background: url(/images/sandtimer.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    /* flex-wrap: wrap; */
+}
+
+.bg-image{
+    width: 100%;
+    min-height: 100vh;
+    background: url("/images/back4.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* height: 100vh; */
+    height: auto;
+    margin: 0;
+    padding: 0;
+    /* filter: blur(3px); */
+}
+
+.bg-text{
+    width: 80%;
+    vertical-align: middle;
+    margin-top: 15vh;
+    height: fit-content;
+    min-height: 100vh;
+}
+
+.bg-text h4{
+    margin-top: 60px;
+
+}
+
+.text-center{
+    text-align: ceter;
+}
+
+/*========== form input =========== */
+
+.input-box{
+    border-radius: 4px;
+    font-size: 20px;
+    border: 2px solid grey;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    /* font-family: 'Roboto Slab', serif; */
+    font-family: 'Almendra', serif;
+    width: fit-content;
+}
+
+.input-box:focus{
+    outline: none;
+    border: 2px solid green;
+}
+
+.input-container{
+    font-family: 'Almendra', serif;
+    padding-bottom: 40px;
+    font-size: x-large;
+    text-align: center;
+}
+
+.paynow{
+    color: white;
+    font-weight: bolder;
+    font-size: 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    background-color: green;
+    width: fit-content;
+    font-family: 'Almendra', serif;
+}
+
+.paynow:hover{
+    background-color: white;
+    color: green;
+    transition: 0.5s;
+}
+
+.author{
+    color: lightgreen;
+}
+
+.author:hover{
+    color: hotpink;
+}
+
+.footer-container{
+    margin-top: 120px;
+    padding: 10px;
+    color: white;
+}
+
+@media screen and (max-width:592px){
+    .bg-image{
+        visibility: hidden;
+        width: 0;
+        height: 0;
+    }
+    
+    body{
+        margin: 0;
+        padding: 0;
+    }
+    
+    .bg-container{
+        background-image: none;
+
+    }
+    
+    .bg-text{
+        width: 100%;
+    }
+
+
+    main{
+        background-image: url(/images/sandtimer.jpg);
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: auto;
+        background-repeat: no-repeat;
+        overflow-x: hidden;
+
+    }
+
+    .footer-container{
+        color: white;
+        padding: 10px;
+    }
+
+}

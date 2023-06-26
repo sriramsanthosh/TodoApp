@@ -1,11 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%=title%></title>
+    <title>TodoApp</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almendra&family=Audiowide&family=Josefin+Sans&family=Quantico&family=Tilt+Prism&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/0d3ce04075.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/userProfile.css">
 </head>
+
 <body>
-    <h1>You have logged in Successfully!</h1>
+    <header>
+        <!-- Nav Bar -->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><i class="fa-solid fa-cubes"></i> TodoApp</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="nav justify-content-center">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/user/sign-out">SignOut</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        
+        
+        <div class="container1">    
+            <h1 class="text-center">Good Morning <%= user.fname %>!</h1>
+            <p class="text-center">Plan your schedule...</p>
+        </div>
+        
+        <hr>
+        <form action="/user/sign-in/add-task" method="post">
+        
+        <div class="description-container input-box-container">
+            <p class="input-box-label">Description</p>
+            <input class="input-box" type="text" name="description" id="description" placeholder="Name of the Task.. * " autofocus required>
+        </div>
+
+        <hr>
+        
+        <div class="text-center container2">
+            <div class="category-container text-center input-box-container">
+                <div class="input-box-label">Category</div>
+                <select name="category" id="category" >
+                    <option value="none">-- Select --</option>
+                    <option value="personal">Personal</option>
+                    <option value="work">Work</option>
+                    <option value="groceries">Groceries</option>
+                    <option value="cleaning">Cleaning</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            
+            <div class="due-date-container text-center input-box-container">
+                <div class="input-box-label">Due Date</div>
+                <input type="date" name="date" id="date">
+            </div>
+        </div>
+            
+        <hr>
+
+        <div class="text-center">
+            <button class="add-task" type="submit"><i class="fa-solid fa-plus"></i> Add Task</button>
+            </form>
+            <form action="/user/sign-in/delete-task" method="post">
+            <button class="delete-task" type="submit"><i class="fa-solid fa-trash-can"></i> Delete Tasks</button>
+        </div>
+
+        <hr>
+        
+        <h1 class="text-center">My Tasks</h1>
+
+        <hr class="no-margin">
+        
+        <% for(let i = 0; i< user.tasks.length ; i++){ %>
+            <div class="task-box">
+                <div><input type="checkbox" name="taskCheckbox<%=i%>" id="taskCheckbox<%=i%>" class="taskCheckbox"></div>
+                <label for="taskCheckbox<%=i%>">
+                    <div class="task-name">
+                        <div> <%= user.tasks[i].description %> </div>
+                        <div><i class="fa-solid fa-calendar-days"></i> <%= user.tasks[i].dueDate %></div>
+                        <hr class="no-margin">
+                    </div>
+                </label>
+                <button type="button" class="category-button"><%= user.tasks[i].category %></button>
+            </div>
+            <hr class="no-margin">
+            <% } %>
+        </form>
+    </main>
+
+    <footer>
+
+        <div class="footer-container text-center">
+            <div>&copy;&nbsp;TodoApp</div>    
+            <div>Made&nbsp;with&nbsp;💖&nbsp;by <a href="" target="_blank" class="author">Sriram&nbsp;Santhosh</a></div>
+        </div>
+
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
 </body>
+
 </html>
