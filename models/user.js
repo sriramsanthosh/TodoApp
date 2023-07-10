@@ -20,18 +20,7 @@ const userSchema = new mongoose.Schema({
     },
     tasks: [
         {
-            description:{
-                type: String, 
-                default: "Task Description"
-            },
-            category:{
-                type: String,
-                default: "Label"
-            },
-            dueDate:{
-                type: String,
-                default: "Due Date"
-            }
+            type: String
         }
     ]
 }, {
@@ -39,5 +28,5 @@ const userSchema = new mongoose.Schema({
 });
 
 const User = mongoose.model('User', userSchema);
-module.exports = User;
 
+module.exports = User;

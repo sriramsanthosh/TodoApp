@@ -1,0 +1,22 @@
+.text-center{
+    text-align: ceter;
+}
+
+body{
+    font-size: 20px;
+    font-family: 'Audiowide', cursive;   
+    color: black;
+    overflow-x: hidden;
+    background: url("/images/back6.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    height: auto;
+    width: 100%;
+}
+
+.sign-out-text{
+    position: relative;
+    padding: 300px 0;
+}

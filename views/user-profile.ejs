@@ -9,8 +9,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Almendra&family=Audiowide&family=Josefin+Sans&family=Quantico&family=Tilt+Prism&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="shortcut icon" href="/images/to-do-list.png" type="image/x-icon">
+
     <!-- fontawesome -->
     <script src="https://kit.fontawesome.com/0d3ce04075.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="/css/userProfile.css">
 </head>
 
@@ -38,11 +41,9 @@
         </nav>
     </header>
     <main>
-        
-        
         <div class="container1">    
-            <h1 class="text-center">Good Morning <%= user.fname %>!</h1>
-            <p class="text-center">Plan your schedule...</p>
+            <h1 class="text-center">Hey <%= user.fname %>!</h1>
+            <p class="text-center">Let's plan our schedule!</p>
         </div>
         
         <hr>
@@ -56,6 +57,13 @@
         <hr>
         
         <div class="text-center container2">
+            
+            
+            <div class="due-date-container text-center input-box-container">
+                <div class="input-box-label">Due Date</div>
+                <input type="date" name="date" id="date">
+            </div>
+
             <div class="category-container text-center input-box-container">
                 <div class="input-box-label">Category</div>
                 <select name="category" id="category" >
@@ -66,11 +74,6 @@
                     <option value="cleaning">Cleaning</option>
                     <option value="other">Other</option>
                 </select>
-            </div>
-            
-            <div class="due-date-container text-center input-box-container">
-                <div class="input-box-label">Due Date</div>
-                <input type="date" name="date" id="date">
             </div>
         </div>
             
@@ -89,20 +92,22 @@
 
         <hr class="no-margin">
         
-        <% for(let i = 0; i< user.tasks.length ; i++){ %>
+        <form action="/completed" method="post">
+        <% for(let i = 0; i< totalTasksData.length ; i++){ %>
             <div class="task-box">
-                <div><input type="checkbox" name="taskCheckbox<%=i%>" id="taskCheckbox<%=i%>" class="taskCheckbox"></div>
-                <label for="taskCheckbox<%=i%>">
+                <div><button type="submit" style="border:none; background: none; margin: 0;padding: 0;"><input type="checkbox" name="<%=totalTasksData[i]._id%>" id="<%= totalTasksData[i]._id %>" class="taskCheckbox"></button></div>
+                <label for="<%= totalTasksData[i]._id %>">
                     <div class="task-name">
-                        <div> <%= user.tasks[i].description %> </div>
-                        <div><i class="fa-solid fa-calendar-days"></i> <%= user.tasks[i].dueDate %></div>
+                        <div> <%= totalTasksData[i].description %> </div>
+                        <div><i class="fa-solid fa-calendar-days"></i> <%= totalTasksData[i].dueDate %></div>
                         <hr class="no-margin">
                     </div>
                 </label>
-                <button type="button" class="category-button"><%= user.tasks[i].category %></button>
+                <button type="button" class="category-button"><%= totalTasksData[i].category %></button>
             </div>
             <hr class="no-margin">
             <% } %>
+        </form>
         </form>
     </main>
 
@@ -114,7 +119,7 @@
         </div>
 
     </footer>
-    
+    <script src="/js/user_profile.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 
 </body>

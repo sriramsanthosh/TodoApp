@@ -7,7 +7,6 @@ const port = process.env.port || 8000;
 
 const db = require('./config/mongoose');
 
-
 app.use(express.urlencoded());
 app.use(cookieParser());
 app.use(express.static("assets"));

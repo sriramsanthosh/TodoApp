@@ -1,7 +1,51 @@
-<%- include("./partials/header"); -%> 
+<!DOCTYPE html>
+<html lang="en">
 
-<main>
-    <h1 class="text-center">Signed Out Successfully!! </h1>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TodoApp</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almendra&family=Audiowide&family=Quantico&family=Tilt+Prism&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/0d3ce04075.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="/images/to-do-list.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/sign-out.css">
+</head>
+
+<body>
+    <header>
+        <!-- Nav Bar -->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/"><i class="fa-solid fa-cubes"></i> TodoApp</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/user/sign-up">SignUp</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/user/sign-in">Log in</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+<main class="text-center sign-out-text">
+    <h1>Signed Out Successfully!! </h1>
+    <p><a href="/user/sign-in">Login</a> Again?</p>
 </main>
 
 <%- include("./partials/footer"); -%> 
