@@ -82,7 +82,7 @@
         <div class="text-center">
             <button class="add-task" type="submit"><i class="fa-solid fa-plus"></i> Add Task</button>
             </form>
-            <form action="/user/sign-in/delete-task" method="post">
+            <form action="/user/sign-in" method="get">
             <button class="delete-task" type="submit"><i class="fa-solid fa-trash-can"></i> Delete Tasks</button>
         </div>
 
@@ -92,7 +92,7 @@
 
         <hr class="no-margin">
         
-        <form action="/completed" method="post">
+        <!-- <form action="/completed" method="post"> -->
         <% for(let i = 0; i< totalTasksData.length ; i++){ %>
             <div class="task-box">
                 <div><button type="submit" style="border:none; background: none; margin: 0;padding: 0;"><input type="checkbox" name="<%=totalTasksData[i]._id%>" id="<%= totalTasksData[i]._id %>" class="taskCheckbox"></button></div>
@@ -107,7 +107,7 @@
             </div>
             <hr class="no-margin">
             <% } %>
-        </form>
+        <!-- </form> -->
         </form>
     </main>
 

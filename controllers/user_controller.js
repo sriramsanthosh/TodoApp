@@ -80,7 +80,7 @@ module.exports.userProfile = function(req, res){
 module.exports.signUpSession = function(req, res){
     if(req.body.password != req.body.confirm_password){
         console.log(`Password not matched! Please enter password correctly`);
-        return redirect('back');
+        return res.redirect('back');
     }
     console.log(req.body);
     User.findOne({email: req.body.email}).then((user)=>{
@@ -234,18 +234,16 @@ module.exports.addTask = function(req, res){
 
     TaskData.create(data).then((task)=>{
         console.log(`Task Created!`);
-
         User.updateOne({_id: user_id}, {$push:{tasks: task._id}}).then((result)=>{
             console.log("pushed task id!");
-            console.log(result);
+            // console.log(result);
         }).catch((err)=>{
             console.log("ERROR ERROR ERROR");
         });
     }).catch((err)=>{
         console.log("ERROR in creating a task!");
     });
-    
-    return res.redirect('back');
+    return res.render('user-sign-in');
 }
 
 module.exports.deleteTask = function(req, res){
@@ -268,5 +266,5 @@ module.exports.deleteTask = function(req, res){
     //         console.log(`Error ${err} in deleting the task!`);
     //     })
     // }
-    return res.redirect('back');
+    return res.render('user-sign-in');
 }
